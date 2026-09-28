@@ -228,8 +228,10 @@ Route::middleware([
                 CustomerProductController::class,
                 'show'
             ])->name('products.show');
- Route::get('/farmers', [FarmerController::class, 'index'])
+         Route::get('/farmers', [FarmerController::class, 'index'])
         ->name('farmers.index');
+        Route::get('/farmers/{id}', [FarmerController::class, 'show'])
+        ->name('farmers.show');
 
             Route::post('/products/{product}/reviews', [
                 CustomerReviewController::class,

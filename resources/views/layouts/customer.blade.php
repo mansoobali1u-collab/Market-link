@@ -38,14 +38,15 @@
                     <div class="collapse navbar-collapse" id="customerNav">
                         <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">Dashboard</a>
+                                <a class="nav-link {{ request()->routeIs('customer.products.*') ? 'active' : '' }}" href="{{ route('customer.products.index') }}">Products</a>
+                            </li>    
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('customer.farmers.index') ? 'active' : '' }}" href="{{ route('customer.farmers.index') }}">Farmers</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('customer.markets.*') ? 'active' : '' }}" href="{{ route('customer.markets.index') }}">Markets</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('customer.products.*') ? 'active' : '' }}" href="{{ route('customer.products.index') }}">Products</a>
-                            </li>
+                            
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('customer.orders.*', 'customer.checkout') ? 'active' : '' }}" href="{{ route('customer.orders.index') }}">My Orders</a>
                             </li>

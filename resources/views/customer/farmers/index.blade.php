@@ -1,4 +1,3 @@
-```blade
 @extends('layouts.customer')
 
 @section('title', 'Farmers — MarketLink')
@@ -153,7 +152,7 @@
 
 
                         <a
-                            href="#"
+                            href="{{ route('customer.farmers.show', $farmer->id) }}"
                             class="btn btn-success w-100"
                         >
                             View Farmer
@@ -252,4 +251,3 @@
 </style>
 
 @endsection
-```
