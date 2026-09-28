@@ -23,7 +23,9 @@ use App\Models\CartItem;
 use App\Models\Market;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Customer\FarmerController;
 
 
 Route::get('/', function () {
@@ -60,7 +62,7 @@ Route::middleware([
 
             'user' => view('customer.dashboard', [
                 'marketCount' => Market::count(),
-
+                'farmerCount' => User::where('role', 'farmer')->count(),
                 'productCount' => Product::where(
                     'is_available',
                     true
@@ -226,6 +228,8 @@ Route::middleware([
                 CustomerProductController::class,
                 'show'
             ])->name('products.show');
+ Route::get('/farmers', [FarmerController::class, 'index'])
+        ->name('farmers.index');
 
             Route::post('/products/{product}/reviews', [
                 CustomerReviewController::class,

@@ -88,14 +88,21 @@
 
                     {{-- Quick links --}}
                     <div class="row g-3 mb-4">
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
                             <a href="{{ route('customer.markets.index') }}" class="ml-quick-link">
                                 <div class="ml-quick-icon"><i class="bi bi-geo-alt-fill"></i></div>
                                 <h5 class="mb-1">Browse Markets</h5>
                                 <p class="text-muted small mb-0">{{ $marketCount }} {{ Str::plural('market', $marketCount) }} to explore — see who's selling where.</p>
                             </a>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4">
+                            <a href="{{ route('customer.farmers.index') }}" class="ml-quick-link">
+                                <div class="ml-quick-icon"><i class="bi bi-geo-alt-fill"></i></div>
+                                <h5 class="mb-1">Browse Farmers</h5>
+                                <p class="text-muted small mb-0">{{ $farmerCount }} {{ Str::plural('farmer', $farmerCount) }} to explore — see who's selling where.</p>
+                            </a>
+                        </div>
+                        <div class="col-sm-4">
                             <a href="{{ route('customer.products.index') }}" class="ml-quick-link">
                                 <div class="ml-quick-icon"><i class="bi bi-basket-fill"></i></div>
                                 <h5 class="mb-1">Browse Products</h5>
